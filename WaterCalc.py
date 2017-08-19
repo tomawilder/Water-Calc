@@ -187,7 +187,6 @@ while True:
 
 #the following prints the results:
 
-
 print('The cooling tower makeup rate is ' + str(format(mu, '.2f')))
 
 print('The cooling tower makeup rate is ' + str(format(mu, '.2f')))
@@ -210,30 +209,7 @@ print('The cooling tower blowdown is ' + str(format(bd, '.2f')))
 
 print('The cooling tower blowdown is ' + str(format(bd, '.2f')))
 
-# To Do:
-    #1 Have list of calculations run itself over multiple times
-    #2 Print out of user inputs with list of calculated variables below
-    #3 Add more calculations
-    #4 Combine with KIVY
 
-    # ALSO
-        #Upload to GITHUB
-
-
-# total list of calculations so far
-    #completed
- # MU = (E * RR) / (CR - 1)
- # MU = CR * BD
- # CR = MU / BD
- # CR = CTC / MUC
- # CR = (E + BD) / BD
- # E = MU - BD
- # E = (CR * BD) - BD
- # E = DT * RR * .00085
- # BD = E / (CR - 1)
- # BD = MU - E
- # BD = MU / CR
-        # not completed
 
 
 print('The End')
