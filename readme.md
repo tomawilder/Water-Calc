@@ -3,6 +3,8 @@ To Do:
 1. Print out of user inputs with list of calculated variables below
 2. Add more calculations
 3. Combine with KIVY
+4. Turn dictionary items to integers
+
 
 Total list of calculations so far:
 
@@ -18,5 +20,5 @@ Total list of calculations so far:
   - BD = E / (CR - 1)
   - BD = MU - E
   - BD = MU / CR
-- not completed:
-   - ??
+  - List user inputs
+  - Add better invalid responses
