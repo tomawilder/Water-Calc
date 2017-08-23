@@ -1,14 +1,12 @@
 To Do:
 
-1. Print out of user inputs with list of calculated variables below
-2. Add more calculations
-3. Combine with KIVY
-4. Turn dictionary items to integers
-
+- Turn dictionary items to integers for calculations
+- Run calculations
+- Print calculations with no repeats
+- Combine with KIVY
+- Add more calculations
 
 Total list of calculations so far:
-
-- completed:
   - MU = (E * RR) / (CR - 1)
   - MU = CR * BD
   - CR = MU / BD
@@ -20,5 +18,3 @@ Total list of calculations so far:
   - BD = E / (CR - 1)
   - BD = MU - E
   - BD = MU / CR
-  - List user inputs
-  - Add better invalid responses
