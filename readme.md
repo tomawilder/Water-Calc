@@ -1,8 +1,8 @@
 To Do:
 
-- Turn dictionary items to integers for calculations
-- Run calculations
-- Print calculations with no repeats
+- Convert calculations to formats - maybe
+- Print calculation results with no repeat of user inputs
+- Print calculation result with calculation used
 - Combine with KIVY
 - Add more calculations
 

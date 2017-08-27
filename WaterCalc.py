@@ -1,5 +1,3 @@
-import pdb
-
 print('\nWelcome to the Water Treatment Calculator!')
 
 # These are all the possible values you can provide
@@ -12,7 +10,7 @@ inputs_dic = {
 'rr': 'recirculation rate gpm',
 'ctc': 'cooling tower conductivity in mmhos',
 'muc': 'makeup water conductivity in mmhos',
-'dt': 'delta T',
+'dt': 'delta T in degrees F',
 }
 
 # dictionary, gives the value of None to the following
@@ -69,9 +67,8 @@ while True:
                 break
             except ValueError:
                 continue
-
             break
-    elif test == "done":
+    elif test == "done" or test == "Done":
         break
 
 #prints out user inputs
@@ -80,14 +77,85 @@ for user_input in values_dic:
     listed_values = values_dic[user_input]
     if listed_values:
         test_result = values_dic[user_input]
-        result_list = [test_result]
         test_name = inputs_dic[user_input]
-        print('The %s is %s.' % (test_name, int(test_result)))
-
-
-
-print('\nCalculations are as follows:')
-
-
+        print('The %s is %s.' % (test_name, format(test_result, '.2f')))
 
 # the following runs the calculations
+print('\nCalculations are as follows:')
+#converts dictionary to variables. easier to type out/read
+mu = values_dic['mu']
+e = values_dic['e']
+bd = values_dic['bd']
+cr = values_dic['cr']
+rr = values_dic['rr']
+ctc = values_dic['ctc']
+muc = values_dic['muc']
+dt = values_dic['dt']
+
+
+
+while True:
+
+    if e is not None and rr is not None and cr is not None and mu is None:
+        mu = ((e * rr) / (cr - 1))
+        continue
+
+    elif cr is not None and bd is not None and mu is None:
+        mu = (cr * bd)
+        continue
+
+    elif ctc is not None and muc is not None and cr is None:
+        cr = (ctc / muc)
+        continue
+
+    elif mu is not None and bd is not None and cr is None:
+        cr = (mu / bd)
+        continue
+
+    elif e is not None and bd is not None and cr is None:
+        cr = ((e + bd) / bd)
+        continue
+
+    elif mu is not None and bd is not None and e is None:
+        e = (mu - bd)
+        continue
+
+    elif cr is not None and bd is not None and e is None:
+        e = ((cr * bd) - bd)
+        continue
+
+    elif dt is not None and rr is not None and e is None:
+        e = (dt * rr * .00085)
+        continue
+
+    elif e is not None and cr is not None and bd is None:
+        bd = (e / (cr - 1))
+        continue
+
+    elif mu is not None and e is not None and bd is None:
+        bd = (mu - e)
+        continue
+
+    elif mu is not None and cr is not None and bd is None:
+        bd = (mu / cr)
+        continue
+
+    break
+
+#converts strings back to dictionary
+values_dic['mu'] = mu
+values_dic['e'] = e
+values_dic['bd'] = bd
+values_dic['cr'] = cr
+values_dic['rr'] = rr
+values_dic['ctc'] = ctc
+values_dic['muc'] = muc
+values_dic['dt'] = dt
+
+
+for user_input in values_dic:
+    listed_values = values_dic[user_input]
+    if listed_values:
+        test_result = values_dic[user_input]
+        test_name = inputs_dic[user_input]
+        print('The %s is %s.' % (test_name, format(test_result, '.2f')))
