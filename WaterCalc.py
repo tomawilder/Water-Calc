@@ -80,8 +80,9 @@ for user_input in values_dic:
         test_name = inputs_dic[user_input]
         print('The %s is %s.' % (test_name, format(test_result, '.2f')))
 
-# the following runs the calculations
+# calculation section
 print('\nCalculations are as follows:')
+
 #converts dictionary to variables. easier to type out/read
 mu = values_dic['mu']
 e = values_dic['e']
@@ -93,7 +94,6 @@ muc = values_dic['muc']
 dt = values_dic['dt']
 
 
-
 while True:
 
     if e is not None and rr is not None and cr is not None and mu is None:
@@ -101,7 +101,7 @@ while True:
         continue
 
     elif cr is not None and bd is not None and mu is None:
-        mu = (cr * bd)
+        mu = (cr * bd) #same as line 112 and line 140
         continue
 
     elif ctc is not None and muc is not None and cr is None:
@@ -109,19 +109,19 @@ while True:
         continue
 
     elif mu is not None and bd is not None and cr is None:
-        cr = (mu / bd)
+        cr = (mu / bd) #same as line 104 and line 140
         continue
 
     elif e is not None and bd is not None and cr is None:
-        cr = ((e + bd) / bd)
+        cr = ((e + bd) / bd) # same as line 124
         continue
 
     elif mu is not None and bd is not None and e is None:
-        e = (mu - bd)
+        e = (mu - bd) # same as line 136
         continue
 
     elif cr is not None and bd is not None and e is None:
-        e = ((cr * bd) - bd)
+        e = ((cr * bd) - bd) # same as line 116
         continue
 
     elif dt is not None and rr is not None and e is None:
@@ -133,11 +133,11 @@ while True:
         continue
 
     elif mu is not None and e is not None and bd is None:
-        bd = (mu - e)
+        bd = (mu - e) # same as line 120
         continue
 
     elif mu is not None and cr is not None and bd is None:
-        bd = (mu / cr)
+        bd = (mu / cr) # same as line 112 and line 104
         continue
 
     break
